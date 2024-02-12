@@ -1,0 +1,8 @@
+# ignore special dirs
+.git
+.vscode
+bin
+build
+
+# ignore binaries
+*.a

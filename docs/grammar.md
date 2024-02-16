@@ -19,7 +19,7 @@ object ::= identifier "{" (literal-expr)* "}"
 
 ; basic expressions
 element-expr ::= nil | boolean | numeric | string | list | object | identifier
-access-expr ::= element-expr ("[" (identifier | numeric) "]")*
+access-expr ::= element-expr ("[" (string | numeric) "]")*
 unary-expr ::= ("-" | "?")* access-expr
 term-expr ::= unary ("+" || "-" unary-expr)*
 factor-expr ::= term-expr ("*" || "/" term-expr)*
@@ -39,9 +39,9 @@ return-stmt ::= "ret" expr
 if-stmt ::= "if" conditional-expr block (alt-stmt){0,1}
 else-stmt ::= "else" block
 while-stmt ::= "while" conditional-expr block
-each-stmt ::= "each" identifier ":" expr block
+each-stmt ::= "each" identifier "in" expr block
 func-call ::= identifier (expr)* ("," expr)*
-stmt ::= use-decl | var-decl | func-decl | func-call
+stmt ::= use-decl | var-decl | func-decl | object-decl | func-call
 block ::= (stmt)+ "end"
-program ::= (line-comment | stmt)*
+program ::= (stmt)*
 ```

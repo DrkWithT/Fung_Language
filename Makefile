@@ -7,9 +7,9 @@ CXX := clang -std=c11
 CXXFLAGS := -Wall -Wextra -Werror
 
 ifeq ($(DEBUG_BUILD),1)
-	CXXFLAGS += -g -Og
+	CFLAGS += -g -Og
 else
-	CXXFLAGS += -O2
+	CFLAGS += -O2
 endif
 
 # executable dir

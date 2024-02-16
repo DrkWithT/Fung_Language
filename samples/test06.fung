@@ -7,7 +7,7 @@ fun findMaxInNums(ref nums)
     mut high = nums[0]
     mut temp = 0
 
-    each x : nums
+    each x in nums
         temp = x
 
         if temp > high
